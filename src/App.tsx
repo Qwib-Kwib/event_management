@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Demo from './demo';
+import Signup from './signup';
+import Signin from './signin';
 
 function Home() {
   return (
@@ -18,9 +20,11 @@ function Home() {
           eros id consequat ultrices, justo velit ultricies sapien, quis ornare
           mauris tellus sed leo.
         </h3>
-        <button type="button" className="manage">
-          MANAGE EVENT
-        </button>
+        <Link to="/demo">
+          <button type="button" className="manage">
+            MANAGE EVENT
+          </button>
+        </Link>
       </div>
     </div>
   );
@@ -48,9 +52,11 @@ function App() {
               Book Event
             </button>
           </Link>
+          <Link to="/signup">
           <button type="button" className="signup">
-            Sign Up Free
+            Sign Up
           </button>
+          </Link>
         </nav>
       </div>
 
@@ -60,6 +66,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/demo" element={<Demo />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/signin" element={<Signin />} />
         </Routes>
       </div>
     </Router>

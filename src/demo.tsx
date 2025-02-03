@@ -44,7 +44,10 @@ function Demo() {
                 </option>
               </select>
             </div>
-
+            <div className='form-group'>
+                        <label>Event Location *</label>
+                        <input type='text' id='eventLocation' placeholder='Enter event location' required />
+            </div>
             <div className='form-group'>
               <label>Please share a bit about your event(s) + event requirements. *</label>
               <textarea placeholder='Event details' required></textarea>

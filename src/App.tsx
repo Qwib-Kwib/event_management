@@ -45,7 +45,7 @@ function App() {
           <Link to="/contact">Contact</Link>
           <Link to="/demo">
             <button type="button" className="demo">
-              Book Demo
+              Book Event
             </button>
           </Link>
           <button type="button" className="signup">

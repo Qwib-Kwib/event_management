@@ -5,6 +5,58 @@
 .container{
     background-color: pink;
     margin: 100px;
-    padding: 100px;
+    padding: 50px;
+    height: 100%;
+    width: 80%;
     border-radius: 10px;
+    display: flex;
 }   
+
+form{
+    background-color: aliceblue;
+    margin-left: 100px;
+    width: 100%;
+}
+
+.form button{
+    padding: 10px;
+    margin: 20px;
+    border-radius: 30px;
+}
+
+.form-group{
+    font-size: large;
+    padding: 30px;
+    padding-bottom: 0;
+}
+
+.form-group input{
+    display: block;
+    background-color: black;
+    padding: 15px;
+    margin-right: 20px;
+    border-radius: 10px;
+    color: white    ;
+    width: 80%;
+}
+
+.form-group textarea{
+    display: block;
+    background-color: black;
+    padding: 15px;
+    margin-right: 20px;
+    border-radius: 10px;
+    color: white    ;    
+    width: 80%;
+}
+
+.name-inputs input{
+    background-color: black;
+    padding: 15px;
+    margin-right: 20px;
+    border-radius: 10px;
+    color: white    ;
+    display: inline;
+    width: 30%;
+}
+

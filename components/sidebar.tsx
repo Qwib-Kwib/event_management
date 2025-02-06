@@ -10,35 +10,11 @@ import {
 import { Montserrat } from "next/font/google";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import routePages from "./routes";
 
 const monsterrat = Montserrat({ weight: "600", subsets: ["latin"] });
 
-const routes = [
-  {
-    label: "Home",
-    icon: Home,
-    href: "/",
-    color: "text-sky-500",
-  },
-  {
-    label: "Book Event",
-    icon: Book,
-    href: "/book",
-    color: "text-blue-500",
-  },
-  {
-    label: "Sign In",
-    icon: LogIn,
-    href: "/sign-in",
-    color: "text-orange-500",
-  },
-  {
-    label: "Sign Up",
-    icon: ArrowUpFromLine,
-    href: "/sign-up",
-    color: "text-emerald-500",
-  },
-];
+const routes = routePages
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -72,7 +48,7 @@ const Sidebar = () => {
               )}
             >
               <div className="flex items-center flex-1">
-                <route.icon className={cn("h-5 w-5 mr-3", route.color)} />
+                <route.icon className={cn("h-5 w-5 mr-3", route.icon_color)} />
                 {route.label}
               </div>
             </Link>

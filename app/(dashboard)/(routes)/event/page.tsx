@@ -6,16 +6,18 @@ import Link from "next/link"
 
 const EventDetail = () => {
   return (
-    <div className="min-h-screen bg-background mt-16">
+    <div className="min-h-screen fill bg-background mt-16">
       <div className="grid md:grid-cols-2 mt-16">
         {/* Left Section */}
         <div className="relative min-h-[600px]">
           {/* Back Button */}
           <div className="absolute top-4 left-4 z-10">
+            <Link href={"/"}>
             <Button variant="secondary" size="sm" className="gap-2">
               <ArrowLeft className="h-4 w-4" />
               Back
             </Button>
+            </Link>
           </div>
           
           {/* Image and Content Overlay */}

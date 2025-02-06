@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const sampleEvents = [
@@ -34,8 +35,8 @@ const Dashboard = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <div className="flex justify-center items-center py-8 px-4">
-        <div className="rounded-3xl border-4 border-white p-2 bg-black max-w-6-xl w-full">
+      <div className="flex justify-center items-center py-16 px-8">
+        <div className="rounded-3xl border-4 border-white p-2 bg-black max-w-6-xl mt-8 w-full">
           <section className="relative flex items-center justify-center h-[500px] bg-black rounded-2xl overflow-hidden">
             <div
               className="absolute inset-0 bg-cover bg-center opacity-50 rounded-2xl"
@@ -44,9 +45,11 @@ const Dashboard = () => {
             <div className="relative z-10 text-center text-white">
               <h1 className="text-5xl font-extrabold">ILOVATION</h1>
               <p className="text-lg mt-2">Event Management</p>
+              <Link href={"/book"}>
               <Button className="bg-purple-600 px-6 py-3 mt-4 rounded-lg">
-                Events
+                Book Events
               </Button>
+              </Link>
             </div>
           </section>
         </div>
@@ -114,7 +117,8 @@ const Dashboard = () => {
       <section className="py-16 px-10 bg-white text-black">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 px-8 py-4">
         <div>
-        <h2 className="text-3xl font-extrabold text-black">ABOUT US</h2>
+        <h2 className="text-3xl font-extrabold text-black">         
+          ABOUT US</h2>
         <h3 className="text-5xl text-purple-600 font-extrabold mt-2">ILOVATION</h3>
         </div>
         <p className="mt-4 text-gray-600 max-w-2xl">

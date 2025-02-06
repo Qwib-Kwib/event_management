@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Facebook, Instagram, Linkedin, ArrowLeft, MapPinned } from "lucide-react"

@@ -20,7 +20,7 @@ const SignIn = () => {
   return (
     <div className="flex h-screen w-screen">
       {/* Left side - Login Form */}
-      <div className="w-1/2 flex items-center justify-center bg-white p-8">
+      <div className="w-3/4 flex items-center justify-center bg-white p-8">
         <div className="w-[400px] space-y-8">
           <div className="space-y-2 text-center">
             <h1 className="text-2xl font-bold text-purple-600">ILOVATION</h1>

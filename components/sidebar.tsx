@@ -1,18 +1,9 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import {
-    ArrowUpFromLine,
-  Book,
-  Home,
-  LogIn,
-} from "lucide-react";
-import { Montserrat } from "next/font/google";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import routePages from "./routes";
-
-const monsterrat = Montserrat({ weight: "600", subsets: ["latin"] });
 
 const routes = routePages
 
@@ -30,7 +21,7 @@ const Sidebar = () => {
           className="flex 
         items-center pl-3 mb-14"
         >
-          <h1 className={cn("text-purple-600 font-extrabold mt-2", monsterrat.className)}>
+          <h1 className={cn("text-purple-600 text-3xl font-extrabold mt-2")}>
             ILOVATION
           </h1>
         </Link>

@@ -13,7 +13,6 @@ const sampleEvents = [
     event_location: "San Francisco, CA",
     start_date: "2025-03-15",
     event_image: "/images/image_1.png",
-    link: "/example1",
   },
   {
     id: 2,
@@ -21,7 +20,6 @@ const sampleEvents = [
     event_location: "Austin, TX",
     start_date: "2025-04-01",
     event_image: "/images/image_2.png",
-    link: "/example1",
   },
   {
     id: 3,
@@ -29,7 +27,6 @@ const sampleEvents = [
     event_location: "New York, NY",
     start_date: "2025-03-20",
     event_image: "/images/image_2.png",
-    link: "/example1",
   },
 ];
 
@@ -38,9 +35,8 @@ const Dashboard = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <div className="flex justify-center items-center py-16 px-8">
-        <div className="rounded-3xl border-4 border-white p-2 bg-black max-w-6-xl mt-8 w-full">
-          <section className="relative flex items-center justify-center h-[500px] bg-black rounded-2xl overflow-hidden">
+      <div>
+          <section className="relative flex items-center justify-center h-[500px] bg-black overflow-hidden">
             <div
               className="absolute inset-0 bg-cover bg-center opacity-50 rounded-2xl"
               style={{ backgroundImage: "url(/images/landingPhoto.png)" }}>
@@ -55,7 +51,6 @@ const Dashboard = () => {
               </Link>
             </div>
           </section>
-        </div>
       </div>
 
       {/* Popular Events Section */}

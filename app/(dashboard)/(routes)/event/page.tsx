@@ -11,9 +11,9 @@ const EventDetail = () => {
         {/* Left Section */}
         <div className="relative min-h-[600px]">
           {/* Back Button */}
-          <div className="absolute top-4 left-4 z-10">
+          <div className="absolute top-6 left-6 z-10">
             <Link href={"/"}>
-            <Button variant="secondary" size="sm" className="gap-2">
+            <Button variant="secondary" size="sm" className="gap-2 bg-purple-600 text-white">
               <ArrowLeft className="h-4 w-4" />
               Back
             </Button>
@@ -32,7 +32,7 @@ const EventDetail = () => {
               <h1 className="text-3xl font-bold mb-4">
                 Best Seller Book Bootcamp - write, Market & Publish Your Book -Lucknow
               </h1>
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center top-6 left-6 gap-2 mb-4">
                 <MapPinned />
                 <span>SM City Iloilo</span>
               </div>

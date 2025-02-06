@@ -1,134 +1,117 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
-import Link from "next/link";
 import React, { useState } from "react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-const sampleEvents = [
-  {
-    id: 1,
-    event_name: "Tech Conference 2025",
-    event_location: "San Francisco, CA",
-    start_date: "2025-03-15",
-    event_image: "/images/image_1.png",
-  },
-  {
-    id: 2,
-    event_name: "Music Festival",
-    event_location: "Austin, TX",
-    start_date: "2025-04-01",
-    event_image: "/images/image_2.png",
-  },
-  {
-    id: 3,
-    event_name: "Food & Wine Expo",
-    event_location: "New York, NY",
-    start_date: "2025-03-20",
-    event_image: "/images/image_2.png",
-  },
-];
+const SignIn = () => {
+  const [hostName, setHostName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-const Dashboard = () => {
-  const [showAllEvents, setShowAllEvents] = useState(false);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Placeholder logic for form submission
+    console.log("Host Name:", hostName, "Email:", email, "Password:", password);
+  };
+
   return (
-    <div className="bg-white">
-      {/* Hero Section */}
-      <div className="flex justify-center items-center py-16 px-8">
-        <div className="rounded-3xl border-4 border-white p-2 bg-black max-w-6-xl mt-8 w-full">
-          <section className="relative flex items-center justify-center h-[500px] bg-black rounded-2xl overflow-hidden">
-            <div
-              className="absolute inset-0 bg-cover bg-center opacity-50 rounded-2xl"
-              style={{ backgroundImage: "url(/images/landingPhoto.png)" }}>
+    <div className="flex h-screen w-screen">
+      {/* Left side - Login Form */}
+      <div className="w-1/2 flex items-center justify-center bg-white p-8">
+        <div className="w-[400px] space-y-8">
+          <div className="space-y-2 text-center">
+            <h1 className="text-2xl font-bold text-purple-600">ILOVATION</h1>
+            <h2 className="text-2xl font-semibold">Sign In</h2>
+          </div>
+          
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {error && <p className="text-red-500 text-sm">{error}</p>}
+            
+            <div className="space-y-2">
+              <label className="text-sm text-gray-600" htmlFor="hostName">
+                Host Name
+              </label>
+              <Input
+                id="hostName"
+                placeholder="Name"
+                type="text"
+                value={hostName}
+                onChange={(e) => setHostName(e.target.value)}
+                required
+                className="w-full"
+              />
             </div>
-            <div className="relative z-10 text-center text-white">
-              <h1 className="text-5xl font-extrabold">ILOVATION</h1>
-              <p className="text-lg mt-2">Event Management</p>
-              <Link href={"/book"}>
-              <Button className="bg-purple-600 px-6 py-3 mt-4 rounded-lg">
-                Book Events
-              </Button>
-              </Link>
+            
+            <div className="space-y-2">
+              <label className="text-sm text-gray-600" htmlFor="email">
+                YOUR EMAIL
+              </label>
+              <Input
+                id="email"
+                placeholder="Enter your email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="w-full"
+              />
             </div>
-          </section>
+            
+            <div className="space-y-2">
+              <div className="flex justify-between">
+                <label className="text-sm text-gray-600" htmlFor="password">
+                  PASSWORD
+                </label>
+                <a 
+                  href="#" 
+                  className="text-sm text-gray-500 hover:text-purple-600"
+                >
+                  Forgot your password?
+                </a>
+              </div>
+              <Input
+                id="password"
+                placeholder="Enter your password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="w-full"
+              />
+            </div>
+
+            <p className="mt-4 text-center text-sm">
+              Don't have an account yet? <Link href="/sign-up" className="text-blue-500">Sign Up</Link>
+            </p>
+
+            <Button 
+              type="submit" 
+              className="w-full bg-purple-600 hover:bg-purple-700 text-white"
+            >
+              Sign in
+            </Button>
+          </form>
         </div>
       </div>
-
-      {/* Popular Events Section */}
-      <section className="py-16 bg-black text-white">
-        <div className="container mx-auto w-full max-w-6xl py-8 px-4">
-        <h2 className="text-3xl font-bold mb-8">Popular Events <span className="text-purple-600">Near You:</span></h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {sampleEvents.map((event) => (
-              <Card
-                key={event.id}
-                className="shadow-md hover:shadow-xl transition-all"
-              >
-                <CardContent className="p-1">
-                  <img
-                    src={event.event_image}
-                    alt={event.event_name}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-4">
-                    <h3 className="text-lg font-semibold text-gray-900">
-                      {event.event_name}
-                    </h3>
-                    <p className="text-gray-600">{event.event_location}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+      
+      {/* Right side - Image */}
+      <div className="w-1/2 relative">
+        <img
+          src="/images/login.png"
+          alt="Login background"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/30">
+          <div className="h-full flex items-center justify-center">
+            <h1 className="text-4xl font-bold text-white">ILOVATION</h1>
           </div>
         </div>
-
-        {/* Show More Button */}
-        <div className="text-center mt-8">
-          <Button size="lg" className="bg-purple-600" onClick={() => setShowAllEvents(!showAllEvents)}>
-            {showAllEvents ? "Hide Events" : "Check Out All Events For You"}
-          </Button>
-        </div>
-
-        {showAllEvents && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 px-8 py-4">
-            {sampleEvents.map((event) => (
-              <Card key={`all-${event.id}`} className="shadow-md">
-                <CardContent className="p-1">
-                  <img
-                    src={event.event_image}
-                    alt={event.event_name}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-4">
-                    <h3 className="text-lg font-semibold text-gray-900">
-                      {event.event_name}
-                    </h3>
-                    <p className="text-gray-600">{event.event_location}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        )}
-      </section>
-
-      {/* About Us Section */}
-      <section className="py-16 px-10 bg-white text-black">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 px-8 py-4">
-        <div>
-        <h2 className="text-3xl font-extrabold text-black">         
-          ABOUT US</h2>
-        <h3 className="text-5xl text-purple-600 font-extrabold mt-2">ILOVATION</h3>
-        </div>
-        <p className="mt-4 text-gray-600 max-w-2xl">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        </div>
-      </section>
+      </div>
     </div>
   );
 };
 
-export default Dashboard;
+export default SignIn;

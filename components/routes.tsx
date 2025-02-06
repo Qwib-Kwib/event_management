@@ -5,7 +5,7 @@ const routePages = [
     {
       label: "Home",
       icon: Home,
-      href: "/",
+      href: "/dashboard",
       icon_color:"text-sky-500",
       color: "text-black",
     },

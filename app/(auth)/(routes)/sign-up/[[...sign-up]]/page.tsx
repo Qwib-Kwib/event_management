@@ -86,7 +86,7 @@ const SignUp = () => {
                 onChange={handleChange}
                 required
               />
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full bg-purple-600">
                 Sign Up
               </Button>
             </form>

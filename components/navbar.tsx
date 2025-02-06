@@ -2,19 +2,16 @@ import { Button } from "@/components/ui/button"
 
 const Navbar = () => {
   return (
-    <>
-      <div className="h-16" /> 
-      <nav className="fixed top-0 left-0 right-0 flex justify-between items-center p-4 bg-purple-600/80 backdrop-blur-sm border-b border-purple-600 z-50">
-      <h1 className="text-white text-2xl font-bold">ILOVATION</h1>
-      <div className="flex gap-4 items-center">
-          <Button variant="ghost" className="text-white">HOME</Button>
-                    <Button variant="ghost" className="text-white">ABOUT</Button>
-                    <Button variant="ghost" className="text-white">CONTACT</Button>
-                    <Button variant="outline" size="lg" className="text-black border-white hover:bg-white hover:text-purple-600">BOOK EVENT</Button>
-                    <Button variant="outline" size="lg" className="text-black border-white hover:bg-white hover:text-purple-600">SIGN UP</Button>
-        </div>
-      </nav>
-    </>
+    <nav className="fixed top-0 left-0 right-0 flex justify-between items-center px-10 py-4 bg-white shadow-md z-50">
+      <h1 className="text-purple-600 text-2xl font-extrabold">ILOVATION</h1>
+      <div className="flex gap-6">
+        <Button variant="ghost" className="text-black font-medium">Home</Button>
+        <Button variant="ghost" className="text-black font-medium">About</Button>
+        <Button variant="ghost" className="text-black font-medium">Contact</Button>
+        <Button variant="outline" className="text-white border-white bg-purple-600 px-6 py-2 rounded-lg">Sign In</Button>
+        <Button variant="outline" className="text-white border-white bg-purple-600 px-6 py-2 rounded-lg">Sign Up</Button>
+      </div>
+    </nav>
   )
 }
 

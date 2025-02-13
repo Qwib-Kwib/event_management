@@ -4,6 +4,9 @@ import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { EventData, fetchEvents } from "@/postgres/functions"
+
+
 
 const SignIn = () => {
   const [hostName, setHostName] = useState("");
@@ -93,6 +96,7 @@ const SignIn = () => {
             >
               Sign in
             </Button>
+            
           </form>
         </div>
       </div>
